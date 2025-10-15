@@ -12,6 +12,19 @@ if (navToggle) {
   });
 }
 
+function setActiveByPage() {
+  const current = location.pathname.split('/').pop() || 'index.html';
+  links.forEach(link => {
+    const href = link.getAttribute('href') || '';
+    const file = href.split('/').pop();
+    if (!href.startsWith('#') && file === current) {
+      link.classList.add('active');
+    } else if (!href.startsWith('#')) {
+      link.classList.remove('active');
+    }
+  });
+}
+
 function onScrollActiveLink() {
   const fromTop = window.scrollY + 100;
   links.forEach(link => {
@@ -26,5 +39,11 @@ function onScrollActiveLink() {
   });
 }
 
-document.addEventListener('scroll', onScrollActiveLink, { passive: true });
+// Determine whether to use page-based or scroll-based highlighting
+setActiveByPage();
+const hasHashLinks = Array.from(links).some(l => (l.getAttribute('href') || '').startsWith('#'));
+if (hasHashLinks) {
+  document.addEventListener('scroll', onScrollActiveLink, { passive: true });
+}
+
 links.forEach(l => l.addEventListener('click', () => nav.classList.remove('open')));
