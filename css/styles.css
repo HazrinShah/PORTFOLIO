@@ -1,0 +1,83 @@
+:root{
+  --bg:#0b0b10;
+  --bg-elev:#11111a;
+  --text:#e5e7eb;
+  --muted:#a7a7b4;
+  --primary:#6b5bff;
+  --primary-700:#5747e6;
+  --accent:#5b9bd5;
+  --card:#121222;
+  --border:#23233a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:linear-gradient(180deg,#0a0a12 0%, #0b0b10 100%);
+  color:var(--text);
+  font-family:"Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height:1.6;
+}
+.container{width:min(1100px, 92%); margin-inline:auto}
+.section{padding:80px 0}
+
+.site-header{
+  position:sticky; top:0; z-index:50;
+  backdrop-filter:saturate(180%) blur(10px);
+  background:rgba(10,10,18,.6);
+  border-bottom:1px solid var(--border);
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px min(1100px, 4%);
+}
+.brand{color:var(--text); text-decoration:none; font-weight:800; letter-spacing:.5px}
+.site-nav ul{display:flex; gap:18px; list-style:none; margin:0; padding:0}
+.site-nav a{color:var(--muted); text-decoration:none; padding:8px 10px; border-radius:8px}
+.site-nav a.active, .site-nav a:hover{color:var(--text); background:var(--bg-elev)}
+
+.nav-toggle{display:none; background:none; border:0; width:42px; height:42px; align-items:center; justify-content:center}
+.nav-toggle span{display:block; width:22px; height:2px; background:var(--text); margin:3px 0; transition:.2s}
+
+.hero{padding-top:120px; padding-bottom:100px; background:radial-gradient(800px 400px at 20% -10%, rgba(107,91,255,.25), transparent 60%), radial-gradient(800px 400px at 80% -10%, rgba(91,155,213,.18), transparent 60%)}
+.title{font-size:clamp(32px, 5vw, 56px); line-height:1.1; margin:0 0 10px; font-weight:800}
+.subtitle{font-size:clamp(16px, 2.2vw, 20px); color:var(--muted); margin:0 0 22px}
+.cta-row{display:flex; gap:12px; flex-wrap:wrap}
+
+.btn{display:inline-block; padding:10px 16px; border:1px solid var(--border); border-radius:10px; color:var(--text); text-decoration:none; background:transparent}
+.btn.primary{background:var(--primary); border-color:var(--primary); color:white}
+.btn.primary:hover{background:var(--primary-700)}
+.btn.small{padding:8px 12px; font-size:14px}
+
+.two-col{display:grid; grid-template-columns:1.2fr .8fr; gap:30px}
+.tags{display:flex; gap:10px; flex-wrap:wrap; list-style:none; padding:0; margin:0}
+.tags li{background:var(--card); border:1px solid var(--border); color:var(--text); padding:8px 10px; border-radius:999px; font-size:14px}
+
+.grid{display:grid; gap:20px}
+.cards{grid-template-columns:repeat(3, 1fr)}
+.card{background:var(--card); border:1px solid var(--border); border-radius:14px; padding:18px}
+.card h3{margin-top:0}
+.card-actions{display:flex; gap:10px}
+
+.timeline{list-style:none; padding:0; margin:0; border-left:2px solid var(--border)}
+.timeline li{display:grid; grid-template-columns:140px 1fr; gap:20px; padding:16px 0 16px 20px; position:relative}
+.timeline li::before{content:""; position:absolute; left:-7px; top:32px; width:12px; height:12px; background:var(--primary); border-radius:50%}
+.time{color:var(--muted)}
+
+.contact-form{display:grid; gap:12px}
+.form-row{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+input, textarea{width:100%; padding:12px 14px; background:#0f0f18; border:1px solid var(--border); border-radius:10px; color:var(--text)}
+input::placeholder, textarea::placeholder{color:#7e7e95}
+
+.site-footer{border-top:1px solid var(--border); padding:30px 0; color:var(--muted); background:#0a0a12}
+
+@media (max-width: 900px){
+  .two-col{grid-template-columns:1fr}
+  .cards{grid-template-columns:1fr 1fr}
+  .timeline li{grid-template-columns:1fr}
+}
+@media (max-width: 640px){
+  .cards{grid-template-columns:1fr}
+  .site-nav{position:fixed; inset:60px 14px auto 14px; background:rgba(10,10,18,.96); border:1px solid var(--border); border-radius:14px; padding:12px; transform:scale(.98); opacity:0; pointer-events:none; transition:.2s}
+  .site-nav.open{opacity:1; transform:scale(1); pointer-events:auto}
+  .site-nav ul{flex-direction:column}
+  .nav-toggle{display:inline-flex}
+}

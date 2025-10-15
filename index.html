@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Portfolio</title>
+  <meta name="description" content="Personal portfolio website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home">Portfolio</a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" aria-label="Primary">
+      <ul>
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="section hero" tabindex="-1">
+      <div class="container">
+        <h1 class="title">Hello, I'm Your Name</h1>
+        <p class="subtitle">A short tagline about what you do.</p>
+        <div class="cta-row">
+          <a href="#projects" class="btn primary">View Projects</a>
+          <a href="#contact" class="btn">Contact Me</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section" tabindex="-1">
+      <div class="container two-col">
+        <div class="col">
+          <h2>About</h2>
+          <p>Write a concise bio here. Highlight your skills, interests, and what you are looking for.</p>
+        </div>
+        <div class="col">
+          <ul class="tags">
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>Node.js</li>
+            <li>UI/UX</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section" tabindex="-1">
+      <div class="container">
+        <h2>Projects</h2>
+        <div class="grid cards">
+          <article class="card">
+            <h3>Project One</h3>
+            <p>Short description of the project and your role.</p>
+            <div class="card-actions">
+              <a href="#" class="btn small">Live</a>
+              <a href="#" class="btn small">Code</a>
+            </div>
+          </article>
+          <article class="card">
+            <h3>Project Two</h3>
+            <p>Short description of the project and your role.</p>
+            <div class="card-actions">
+              <a href="#" class="btn small">Live</a>
+              <a href="#" class="btn small">Code</a>
+            </div>
+          </article>
+          <article class="card">
+            <h3>Project Three</h3>
+            <p>Short description of the project and your role.</p>
+            <div class="card-actions">
+              <a href="#" class="btn small">Live</a>
+              <a href="#" class="btn small">Code</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section" tabindex="-1">
+      <div class="container">
+        <h2>Experience</h2>
+        <ul class="timeline">
+          <li>
+            <div class="time">2024 — Present</div>
+            <div class="entry">
+              <h3>Role at Company</h3>
+              <p>Key responsibilities and achievements.</p>
+            </div>
+          </li>
+          <li>
+            <div class="time">2022 — 2024</div>
+            <div class="entry">
+              <h3>Role at Company</h3>
+              <p>Key responsibilities and achievements.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="section" tabindex="-1">
+      <div class="container">
+        <h2>Contact</h2>
+        <form class="contact-form" action="https://formspree.io/f/your-id" method="POST">
+          <div class="form-row">
+            <input type="text" name="name" placeholder="Your name" required>
+            <input type="email" name="email" placeholder="Your email" required>
+          </div>
+          <textarea name="message" rows="6" placeholder="Your message" required></textarea>
+          <button type="submit" class="btn primary">Send</button>
+        </form>
+        <div class="contact-alt">
+          <a href="mailto:you@example.com">you@example.com</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Your Name. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
